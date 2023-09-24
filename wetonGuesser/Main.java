@@ -1,8 +1,8 @@
-package src.wetonGuesser;
+package src.WetonGuesser;
 
 import java.util.Scanner;
 
-import src.wetonGuesser.Date;
+import src.WetonGuesser.Date;
 
 public class Main {
 

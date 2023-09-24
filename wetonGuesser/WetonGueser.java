@@ -1,4 +1,4 @@
-package src.wetonGuesser;
+package src.WetonGuesser;
 
 import java.util.Scanner;
 

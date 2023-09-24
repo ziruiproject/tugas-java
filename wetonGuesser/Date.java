@@ -1,4 +1,4 @@
-package src.wetonGuesser;
+package src.WetonGuesser;
 
 public class Date {
 
