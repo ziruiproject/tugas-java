@@ -15,8 +15,16 @@ public class Bitwise {
         System.out.println(false && true);
         // But can't do bitwise
         // System.out.println(0b00000000 && 0b00000001);
-        x = 1;
 
+        x = 1;
+        System.out.println((1 == x) | (10 > x++));
+        // Same as
+        System.out.println(true | false);
+        System.out.println(0b1 | 0b0);
+        x = 1;
+        System.out.println((1 == x) || (10 > x++));
+
+        x = 1;
         // Bitwise operator will covert integer to binary, then it will applly
         // the operation to each bits
 
@@ -35,9 +43,9 @@ public class Bitwise {
         int b = 74;
         int binaryA = 0b00011011;
         int binaryB = 0b01001010;
-        int result = 0b00001010;
-        System.out.println(2 | 4);
-
-        System.out.println((x > y) && (x < y));
+        int resultBitwiseAnd = 0b00001010;
+        int resultBitwiseOr = 0b01011011;
+        System.out.println(binaryA & binaryB);
+        System.out.println(binaryA | binaryB);
     }
 }
