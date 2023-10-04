@@ -1,5 +1,3 @@
-package src.Praktek;
-
 public class Sum {
     static int[] arr = new int[] {
             3, 7, 5, 4, 8, 9

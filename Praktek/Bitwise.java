@@ -1,5 +1,3 @@
-package src.Praktek;
-
 public class Bitwise {
     public static void main(String[] args) {
         int x = 1;

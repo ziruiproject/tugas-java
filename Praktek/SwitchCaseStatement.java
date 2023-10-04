@@ -1,5 +1,3 @@
-package src.Praktek;
-
 public class SwitchCaseStatement {
     public static void main(String[] args) {
         char value = 'A';

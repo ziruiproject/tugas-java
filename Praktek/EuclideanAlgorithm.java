@@ -1,5 +1,3 @@
-package src.Praktek;
-
 public class EuclideanAlgorithm {
     public static int fpb(int a, int b) {
         while (b != 0) {
