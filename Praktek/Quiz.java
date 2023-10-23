@@ -7,8 +7,20 @@ public class Quiz {
     // Main = Nama fungsi / method
     // Didalam kurung ada parameter
     public static void main(String[] args) {
-        int hasil = mengkuadratkan(3); // 9
-        System.out.println(hasil); // 9
+        for (int i = 0; i <= baris; i++) {
+            for (int j = 0; j < i; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+        int baris = 8;
+        for (;;)
+            System.out.println("hello");
+
+        if (baris == 8)
+            System.out.println();
+
     }
 
     private static void No5() {
@@ -73,5 +85,9 @@ public class Quiz {
     private static int mengkuadratkan(int num) {
         return num * num;
     }
+
+    // private static int mengkuadratkan(double num) {
+    // return (int) num * num;
+    // }
 
 }

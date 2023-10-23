@@ -28,6 +28,6 @@ public class SwitchCaseStatement {
             default:
                 System.out.println("Mungkin Anda salah jurusan");
         }
-
+        ;
     }
 }
