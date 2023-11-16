@@ -6,7 +6,7 @@ class Praktikum1 {
         // PANGGIL METHOD DISINI
     }
 
-    public static void No1(long a, long b) {
+    private static void No1(long a, long b) {
         long kpk = 1;
         for (long i = a; i <= b; i++) {
             kpk = getKPK(kpk, i);
@@ -14,11 +14,11 @@ class Praktikum1 {
         System.out.println("KPK dari " + a + " s.d " + b + " adalah: " + kpk);
     }
 
-    public static long getKPK(long a, long b) {
+    private static long getKPK(long a, long b) {
         return a * (b / getFPB(a, b));
     }
 
-    public static long getFPB(long a, long b) {
+    private static long getFPB(long a, long b) {
         while (b != 0) {
             long temp = b;
             b = a % b;
@@ -27,7 +27,7 @@ class Praktikum1 {
         return a;
     }
 
-    public static String No2() {
+    private static void No2() {
         Scanner input = new Scanner(System.in);
         System.out.println("Masukan x titik pertama: ");
         double x1 = input.nextDouble();
@@ -48,12 +48,12 @@ class Praktikum1 {
         y1 = y1 * -1;
 
         if (x1 < 0) {
-            return "y = " + m + "(x + " + (x1 * -1) + ") + (" + y1 + ")";
+            System.out.println("y = " + m + "(x + " + (x1 * -1) + ") + (" + y1 + ")");
         }
-        return "y = " + m + "(x - " + x1 + ") + (" + y1 + ")";
+        System.out.println("y = " + m + "(x - " + x1 + ") + (" + y1 + ")");
     }
 
-    public static void No3() {
+    private static void No3() {
         System.out.println("a\t\ta^2\tcbrt(a)");
         System.out.println("-------------------------------------------");
 
@@ -64,7 +64,7 @@ class Praktikum1 {
         }
     }
 
-    public static void No4() {
+    private static void No4() {
         Scanner input = new Scanner(System.in);
         System.out.println("Masukan besar sudut: ");
         double sudut = input.nextDouble();
