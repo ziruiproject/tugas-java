@@ -4,7 +4,7 @@ import java.util.Random;
 public class Praktikum5 {
 
     public static void main(String[] args) {
-        No2();
+        No3();
     }
 
     private static void No1() {
@@ -140,5 +140,91 @@ public class Praktikum5 {
         }
 
         return result.toString();
+    }
+
+    private static final String[] kataKunci = {
+            "programming", "java", "hangman", "computer", "algorithm",
+            "python", "javascript", "developer", "database", "android",
+            "interface", "encryption", "network", "security", "software",
+            "internet", "framework", "responsive", "application", "tutorial",
+            "machine", "learning", "artificial", "intelligence", "virtual",
+            "reality", "augmented", "blockchain", "typescript", "angular",
+            "react", "nodejs", "mongodb", "firebase", "spring", "hibernate",
+            "authentication", "authorization", "docker", "kubernetes", "serverless",
+            "responsive", "frontend", "backend", "fullstack", "web",
+            "responsive", "mobile", "desktop", "cloud", "agile",
+            "programming", "language", "compiler", "debugging", "optimization",
+            "variable", "function", "iteration", "recursion", "array",
+            "linkedlist", "queue", "stack", "sorting", "searching",
+            "tree", "graph", "dynamic", "static", "polymorphism",
+            "inheritance", "encapsulation", "abstraction", "interface", "object",
+            "class", "instance", "variable", "method", "constructor",
+            "destructor", "override", "overload", "exception", "trycatch"
+    };
+
+    public static void No3() {
+        Scanner scanner = new Scanner(System.in);
+        Random random = new Random();
+
+        boolean bermain = true;
+        while (bermain) {
+            String kataRahasia = kataKunci[random.nextInt(kataKunci.length)].toLowerCase();
+            StringBuilder kataTebakan = new StringBuilder("*".repeat(kataRahasia.length()));
+            StringBuilder hurufTebakan = new StringBuilder();
+            int kesalahan = 0;
+
+            System.out.println("Selamat datang di Hangman!");
+            System.out.println("Anda memiliki maksimal 9 kesalahan untuk menebak kata.");
+
+            while (kataTebakan.indexOf("*") != -1 && kesalahan < 9) {
+                System.out.println("(Tebak) Kata: " + kataTebakan);
+                System.out.println("Huruf yang sudah ditebak: " + hurufTebakan);
+                System.out.println("Masukkan huruf tebakan: ");
+                char tebakan = scanner.next().toLowerCase().charAt(0);
+
+                if (!Character.isLetter(tebakan)) {
+                    System.out.println("Masukkan huruf yang valid.");
+                    continue;
+                }
+
+                if (hurufTebakan.indexOf(String.valueOf(tebakan)) != -1) {
+                    System.out.println("Anda sudah menebak huruf ini sebelumnya. Coba lagi.");
+                    continue;
+                }
+
+                hurufTebakan.append(tebakan);
+
+                if (kataRahasia.indexOf(tebakan) != -1) {
+                    System.out.println("Tebakan benar!");
+                    kataTebakan = updateKataTebakan(kataRahasia, kataTebakan, tebakan);
+                } else {
+                    kesalahan++;
+                    System.out.println("Tebakan salah. Anda telah salah sebanyak " + kesalahan + " kali.");
+                }
+            }
+
+            if (kataTebakan.indexOf("*") == -1) {
+                System.out.println("Selamat, Anda berhasil menebak kata! Kata rahasianya adalah " + kataRahasia + ".");
+            } else {
+                System.out
+                        .println("Maaf, Anda tidak berhasil menebak kata. Kata rahasianya adalah " + kataRahasia + ".");
+            }
+
+            System.out.println("Mau bermain lagi? (y/n): ");
+            char jawaban = scanner.next().toLowerCase().charAt(0);
+            bermain = (jawaban == 'y');
+        }
+
+        System.out.println("Terima kasih telah bermain Hangman!");
+        scanner.close();
+    }
+
+    private static StringBuilder updateKataTebakan(String kataRahasia, StringBuilder kataTebakan, char tebakan) {
+        for (int i = 0; i < kataRahasia.length(); i++) {
+            if (kataRahasia.charAt(i) == tebakan) {
+                kataTebakan.setCharAt(i, tebakan);
+            }
+        }
+        return kataTebakan;
     }
 }
