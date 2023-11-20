@@ -1,39 +1,19 @@
-import java.util.Arrays;
-import java.util.Random;
-
-public class Main {
+class Main {
     public static void main(String[] args) {
-        double[] arr = generateRandomArray(10);
+        double[][] matrix = {
+                { 1, 2, 3, 4 },
+                { 5, 6.5, 7, 8 },
+                { 9, 10, 11, 12 },
+                { 13, 14, 15, 16 }
+        };
 
-        double min = arr[9];
-        for (double value : arr) {
-            if (value < min) {
-                min = value;
-            }
+        double result = 0;
+        int diagonal = 0;
+        for (int i = 0; i < matrix.length; i++) {
+            result += matrix[i][diagonal];
+            diagonal++;
         }
 
-        double max = arr[9];
-        for (double value : arr) {
-            if (value > max) {
-                max = value;
-            }
-        }
-
-        System.out.println(min);
-        System.out.println(max);
-        System.out.println(Arrays.toString(arr));
-    }
-
-    private static double[] generateRandomArray(int size) {
-        double[] array = new double[size];
-        Random random = new Random();
-
-        for (int i = 0; i < size; i++) {
-            double randomValue = random.nextDouble() * 100;
-            double roundedValue = Math.round(randomValue * 100.0) / 100.0;
-            array[i] = roundedValue;
-        }
-
-        return array;
+        System.out.println(result);
     }
 }
