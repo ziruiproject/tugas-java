@@ -4,7 +4,7 @@ import java.util.Random;
 public class Praktikum5 {
 
     public static void main(String[] args) {
-
+        No2();
     }
 
     private static void No1() {
@@ -93,7 +93,7 @@ public class Praktikum5 {
             return kataOrang[random.nextInt(kataOrang.length)];
         } else {
             return generateSatuanBenda(random) + (random.nextDouble() < 0.5 ? " " + generateKataSifat(random) : "") +
-                    ". " + kataBendaUmum[random.nextInt(kataBendaUmum.length)] +
+                    ". " + capitalize(kataBendaUmum[random.nextInt(kataBendaUmum.length)]) +
                     (random.nextDouble() < 0.5 ? " yang " + generateFrasaKerja(random) : "");
         }
     }
@@ -123,6 +123,22 @@ public class Praktikum5 {
     }
 
     private static String capitalize(String str) {
-        return Character.toUpperCase(str.charAt(0)) + str.substring(1);
+        StringBuilder result = new StringBuilder(str.length());
+        boolean capitalizeNext = true;
+
+        for (char charAt : str.toCharArray()) {
+            if (capitalizeNext) {
+                result.append(Character.toUpperCase(charAt));
+                capitalizeNext = false;
+            } else {
+                result.append(charAt);
+            }
+
+            if (charAt == ' ' || charAt == '.') {
+                capitalizeNext = true;
+            }
+        }
+
+        return result.toString();
     }
 }
