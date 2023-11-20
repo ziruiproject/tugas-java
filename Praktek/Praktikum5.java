@@ -62,7 +62,6 @@ public class Praktikum5 {
         scanner.close();
     }
 
-
     private static final String[] kataOrang = { "Nathan", "Yesaya", "Takeshi", "Nanda" };
     private static final String[] kataBendaUmum = { "pria", "wanita", "ikan", "gajah", "kuda" };
     private static final String[] satuanBenda = { "seekor", "setiap", "beberapa", "seorang" };
@@ -126,6 +125,4 @@ public class Praktikum5 {
     private static String capitalize(String str) {
         return Character.toUpperCase(str.charAt(0)) + str.substring(1);
     }
-}
-
 }
